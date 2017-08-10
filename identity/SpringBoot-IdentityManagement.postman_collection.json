@@ -1,0 +1,148 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SpringBoot-IdentityManagement",
+		"_postman_id": "0118cf5c-32f4-a594-fc74-1c89b096def5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get user details",
+			"request": {
+				"url": "localhost:8080/identity/api/User/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"url": "localhost:8080/identity/api/User/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userName\": \"vishal\",\n    \"firstName\": \"Vishal\",\n    \"lastName\": \"Gangore\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Modify User",
+			"request": {
+				"url": "localhost:8080/identity/api/User/",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 2,\n    \"userName\": \"vgangore\",\n    \"firstName\": \"Vishal\",\n    \"lastName\": \"Gangore\",\n    \"identityStatus\": true,\n    \"locked\": false\n}"
+				},
+				"description": "\t\t\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Disable User",
+			"request": {
+				"url": "localhost:8080/identity/api/User/2",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"identityStatus\":false\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Enable User",
+			"request": {
+				"url": "localhost:8080/identity/api/User/2",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"identityStatus\":true\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Lock User",
+			"request": {
+				"url": "localhost:8080/identity/api/User/2",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lockedStatus\":true\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Unlock User",
+			"request": {
+				"url": "localhost:8080/identity/api/User/2",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"lockedStatus\":false\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
