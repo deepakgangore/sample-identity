@@ -5,6 +5,9 @@ import com.deepak.identity.usermanagement.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by dgangore on 8/10/2017.
  */
@@ -38,6 +41,21 @@ public class UserManagerService {
         }else{
             throw new RuntimeException("User Id not passed");
         }
+    }
+
+    /**
+     * Get all users
+     * @return List of users
+     */
+    public List<User> getAllUsers(){
+        Iterable<User> iterable = userRepository.findAll();
+        if(iterable == null)
+            return null;
+        List<User> userList = new ArrayList<>();
+        for(User user : iterable){
+            userList.add(user);
+        }
+        return userList;
     }
 
     /**

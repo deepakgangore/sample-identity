@@ -6,6 +6,7 @@ import com.deepak.identity.usermanagement.service.UserManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -27,6 +28,11 @@ public class UserRestService {
     @RequestMapping(method = RequestMethod.PUT)
     public User modifyUser(@RequestBody User user){
         return userManagerService.modifyUser(user);
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public List<User> getAllUsers(){
+        return userManagerService.getAllUsers();
     }
 
     @RequestMapping(method = RequestMethod.GET, path = "/{userId}")
